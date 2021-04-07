@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 
 
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import DuckFeedingInfoComponent from './pages/duck-feeding-info/duck-feeding-info.component'
 import DuckFeedingSubmitComponent from './pages/duck-feeding-submit/duck-feeding-submit.component'
