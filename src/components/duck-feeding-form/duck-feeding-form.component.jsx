@@ -35,7 +35,6 @@ const DuckFeedingFormComponent = () => {
       <label >Food Amount:</label>
         <input type="number" name="text"  placeholder=" "  className="form-control-material" required />
       </div>
-
       </div>
       <div className='display-row'>
       <div className="form-input-material">
