@@ -26,10 +26,12 @@ class DuckFeedingInfoComponent extends React.Component  {
              
                 (this.props.duckFeedingInfo.length) > 0 &&
                 this.props.duckFeedingInfo.map((item, i) => {
+                    const time = new Date(item.feedingTime)
                     return (
                         <div className='fetched-info-box' key={`duckFeedingInfo${i}`} >
                             <span>Duck Feeding Time:</span>
-                            <p>{Date(item.feedingTime)}</p>
+                            <p>{time.getFullYear()}/{time.getMonth()}/{time.getDate()}</p>
+
                             <span>Duck Count:</span>
                             <p>{item.duckCount}</p>
                             <span>Food Type:</span>
