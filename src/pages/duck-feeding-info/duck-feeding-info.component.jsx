@@ -6,9 +6,6 @@ import { updateDuckFeedingInfo } from './../../redux/duck-feeding-info/duck-feed
 
 import './duck-feeding-info.styles.scss'
 class DuckFeedingInfoComponent extends React.Component  {
-    constructor (props) {
-        super(props);
-    }
     async getDuckFeedingInformation () {
         const result = await axios.get(`https://freshworks-duck-feeding-api.herokuapp.com/api/duck-feeding?limit=10`)
         this.props.updateDuckFeedingInfo(result.data)
@@ -20,6 +17,13 @@ class DuckFeedingInfoComponent extends React.Component  {
         return (
         <div className='box-format'>
             {
+                
+                    (this.props.duckFeedingInfo.length) === 0 &&
+                    <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                
+            }
+            {
+             
                 (this.props.duckFeedingInfo.length) > 0 &&
                 this.props.duckFeedingInfo.map((item, i) => {
                     return (

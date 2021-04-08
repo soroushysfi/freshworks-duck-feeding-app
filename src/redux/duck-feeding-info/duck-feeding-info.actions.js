@@ -6,3 +6,9 @@ export const updateDuckFeedingInfo = (items) => ({
     
     payload: items
 })
+
+export const showSchedule = (showSchedule) => ({
+    type: DuckFeedingInfoActionTypes.TOGGLE_SCHEDULE_INPUT,
+    payload: showSchedule
+    
+})

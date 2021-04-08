@@ -1,6 +1,7 @@
 import DuckFeedingInfoActionTypes from './duck-feeding-info.types'
 const INITIAL_STATUS = {
-    duckFeedingInfo: []
+    duckFeedingInfo: [],
+    showSchedule: false
 }
 
 const DuckFeedingInfoReducer = (state = INITIAL_STATUS, action) => {
@@ -9,7 +10,12 @@ const DuckFeedingInfoReducer = (state = INITIAL_STATUS, action) => {
             return {
                 ...state,
                 duckFeedingInfo: action.payload
-            }            
+            }    
+        case DuckFeedingInfoActionTypes.TOGGLE_SCHEDULE_INPUT: 
+            return {
+                ...state,
+                showSchedule: action.payload
+            }          
         default:
             return state;
     }
