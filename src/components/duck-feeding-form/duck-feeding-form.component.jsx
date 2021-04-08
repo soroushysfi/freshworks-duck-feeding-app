@@ -10,7 +10,7 @@ const handleSubmit = (event) => {
 
 const DuckFeedingFormComponent = () => {
     return (  
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form box-format" onSubmit={handleSubmit}>
       <h1>Submit your duck feeding information!</h1>
       <div className='display-row'>
       <CustomInputComponent label='Feeding Time' type='date' placeholder="When did you feed the ducks" required={true}/> 

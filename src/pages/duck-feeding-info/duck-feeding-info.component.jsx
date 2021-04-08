@@ -2,7 +2,7 @@ import React from 'react'
 
 const DuckFeedingInfoComponent = () => {
     return (
-        <div>
+        <div className='box-format'>
             info
         </div>
     )
