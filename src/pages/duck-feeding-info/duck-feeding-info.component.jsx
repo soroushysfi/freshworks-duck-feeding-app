@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import axios from 'axios';
 
 import { updateDuckFeedingInfo } from './../../redux/duck-feeding-info/duck-feeding-info.actions'
+import DuckFeedingInfoBoxComponent from './../../components/duck-feeding-info-box/duck-feeding-info-box.component'
+import API_CRED from './../../config/api-config'
 
 import './duck-feeding-info.styles.scss'
 class DuckFeedingInfoComponent extends React.Component  {
     async getDuckFeedingInformation () {
-        const result = await axios.get(`https://freshworks-duck-feeding-api.herokuapp.com/api/duck-feeding?limit=10`)
+        const result = await axios.get(`${API_CRED.address}?limit=10`)
         this.props.updateDuckFeedingInfo(result.data)
     }
     componentDidMount () {
@@ -26,17 +28,8 @@ class DuckFeedingInfoComponent extends React.Component  {
              
                 (this.props.duckFeedingInfo.length) > 0 &&
                 this.props.duckFeedingInfo.map((item, i) => {
-                    const time = new Date(item.feedingTime)
                     return (
-                        <div className='fetched-info-box' key={`duckFeedingInfo${i}`} >
-                            <span>Duck Feeding Time:</span>
-                            <p>{time.getFullYear()}/{time.getMonth()}/{time.getDate()}</p>
-
-                            <span>Duck Count:</span>
-                            <p>{item.duckCount}</p>
-                            <span>Food Type:</span>
-                            <p>{item.foodType}</p>
-                        </div>
+                        <DuckFeedingInfoBoxComponent key={`duckFeedingInfo${i}`} item={item}/>
                     )
                 })
             }

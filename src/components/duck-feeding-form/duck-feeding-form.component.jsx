@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { showSchedule } from './../../redux/duck-feeding-info/duck-feeding-info.actions'
 import CustomInputComponent from './../custom-input/custom-input.component'
-
+import API_CRED from './../../config/api-config'
 import './duck-feeding-form.styles.scss'
 
 
@@ -12,6 +12,7 @@ class DuckFeedingFormComponent extends React.Component {
   constructor (props) {
     super(props);
     this.state = { 
+      formData : {
       feedingTime: '',
       foodType: '',
       foodKind: '',
@@ -19,30 +20,31 @@ class DuckFeedingFormComponent extends React.Component {
       foodAmount: '',
       reOccurring: false,
       reOccurringPeriod: 'daily',
+      },
       loadingButton: false,
       messageAfterSubmit: false
+    
     };
   }
   handleChange = (event) => {
+    const { formData } = { ...this.state }
     if (event.target.name !== 'reOccurring') {
-      this.setState({[event.target.name]: event.target.value}) 
+      formData[event.target.name] = event.target.value
     } else {
       this.props.showScheduleToggle(event.target.checked)
-      this.setState({[event.target.name]: event.target.checked}) 
+      formData[event.target.name] = event.target.checked
     }
+    this.setState({formData}) 
+
   };
   handleSubmit = async (event) => {
     event.preventDefault();
     this.setState({loadingButton: true})
-    let data = {...this.state}
-    delete data.loadingButton
-    delete data.messageAfterSubmit
-
-    await axios.post('https://freshworks-duck-feeding-api.herokuapp.com/api/duck-feeding', data);
+    await axios.post(API_CRED.address, this.state.formData);
     this.setState({loadingButton: false})
     this.setState({messageAfterSubmit: true})
 
-    this.setState({ 
+    const formData = { 
       feedingTime: '',
       foodType: '',
       foodKind: '',
@@ -50,7 +52,8 @@ class DuckFeedingFormComponent extends React.Component {
       foodAmount: '',
       reOccurring: false,
       reOccurringPeriod: 'daily'
-    })
+    }
+    this.setState({formData})
  
   }
   render () {
@@ -58,18 +61,18 @@ class DuckFeedingFormComponent extends React.Component {
       <form className="login-form box-format" onSubmit={this.handleSubmit}>
       <h1>Submit your duck feeding information!</h1>
       <div className='display-row'>
-      <CustomInputComponent label='Feeding Time' value={this.state.feedingTime} name='feedingTime' onChange={this.handleChange} type='date' placeholder="When did you feed the ducks" required={true}/> 
-      <CustomInputComponent label='Food Type' value={this.state.foodType} name='foodType' onChange={this.handleChange} type='text' placeholder="Like vegetable" required={true}/> 
+      <CustomInputComponent label='Feeding Time' value={this.state.formData.feedingTime} name='feedingTime' onChange={this.handleChange} type='date' placeholder="When did you feed the ducks" required={true}/> 
+      <CustomInputComponent label='Food Type' value={this.state.formData.foodType} name='foodType' onChange={this.handleChange} type='text' placeholder="Like vegetable" required={true}/> 
       </div>
       <div className='display-row'>
-      <CustomInputComponent label='Food Kind' value={this.state.foodKind}  name='foodKind' onChange={this.handleChange} type='text' placeholder="Like broccoli" required={true}/> 
-      <CustomInputComponent label='Duck Count' value={this.state.duckCount}  name='duckCount' onChange={this.handleChange} type='number' placeholder="How many ducks?" required={true}/> 
+      <CustomInputComponent label='Food Kind' value={this.state.formData.foodKind}  name='foodKind' onChange={this.handleChange} type='text' placeholder="Like broccoli" required={true}/> 
+      <CustomInputComponent label='Duck Count' value={this.state.formData.duckCount}  name='duckCount' onChange={this.handleChange} type='number' placeholder="How many ducks?" required={true}/> 
       </div>
       <div className='display-row'>
-      <CustomInputComponent label='Food Amount' value={this.state.foodAmount}  name='foodAmount' onChange={this.handleChange} type='number' placeholder="How many grams?" required={true}/> 
+      <CustomInputComponent label='Food Amount' value={this.state.formData.foodAmount}  name='foodAmount' onChange={this.handleChange} type='number' placeholder="How many grams?" required={true}/> 
       </div>
       <div className='display-row'>
-      <CustomInputComponent label='Re-occurring Feeding' value={this.state.reOccurring}  name='reOccurring' onChange={this.handleChange} type='checkbox'/> 
+      <CustomInputComponent label='Re-occurring Feeding' value={this.state.formData.reOccurring}  name='reOccurring' onChange={this.handleChange} type='checkbox'/> 
       {
       this.props.showSchedule &&
       <div className="form-input-material">
