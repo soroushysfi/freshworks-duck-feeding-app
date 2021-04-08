@@ -1,9 +1,11 @@
 import React from 'react'
 
+import CustomInputComponent from './../custom-input/custom-input.component'
+
 import './duck-feeding-form.styles.scss'
 const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('form was submitted');
+    console.log(event);
   }
 
 const DuckFeedingFormComponent = () => {
@@ -11,42 +13,28 @@ const DuckFeedingFormComponent = () => {
       <form className="login-form" onSubmit={handleSubmit}>
       <h1>Submit your duck feeding information!</h1>
       <div className='display-row'>
-      <div className="form-input-material">
-      <label >Feeding Time: </label>
-        <input type="text" name="username" placeholder=" "  className="form-control-material" required />
-      </div>
-      <div className="form-input-material">
-      <label >Food Type:</label>
-        <input type="text" name="text"  placeholder=" "  className="form-control-material" required />
-      </div>
+      <CustomInputComponent label='Feeding Time' type='date' placeholder="When did you feed the ducks" required={true}/> 
+      <CustomInputComponent label='Food Type' type='text' placeholder="Like vegetable" required={true}/> 
       </div>
       <div className='display-row'>
-      <div className="form-input-material">
-      <label >Food Kind:</label>
-        <input type="text" name="text"  placeholder=" "  className="form-control-material" required />
-      </div>
-      <div className="form-input-material">
-      <label >Duck Count:</label>
-        <input type="number" name="text"  placeholder=" "  className="form-control-material" required />
-      </div>
+      <CustomInputComponent label='Food Kind' type='text' placeholder="Like broccoli" required={true}/> 
+      <CustomInputComponent label='Duck Count' type='number' placeholder="How many ducks?" required={true}/> 
       </div>
       <div className='display-row'>
-      <div className="form-input-material">
-      <label >Food Amount:</label>
-        <input type="number" name="text"  placeholder=" "  className="form-control-material" required />
-      </div>
+      <CustomInputComponent label='Food Amount' type='number' placeholder="How many grams?" required={true}/> 
       </div>
       <div className='display-row'>
+      <CustomInputComponent label='Re-occurring Feeding' type='checkbox' placeholder="" required={true}/> 
       <div className="form-input-material">
-      <label >Re-occurring Feeding:</label>
-        <input type="checkbox" name="text"  placeholder=" "  className="form-control-material" required />
+      <label htmlFor="period">Re-occurring Period:</label>
+        <select id="period" name="period">
+            <option value="volvo">Daily</option>
+            <option value="saab">Weekly</option>
+            <option value="fiat">Monthly</option>
+        </select>
       </div>
-      <div className="form-input-material">
-      <label >Re-occurring Period:</label>
-        <input type="text" name="text"  placeholder=" "  className="form-control-material" required />
       </div>
-      </div>
-      <button type="submit" className="btn btn-primary btn-ghost">Submit</button>
+      <button type="submit" className="btn">Submit</button>
     </form>
     )
 }
