@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomInput Component tests expect to match CustomInputComponent snapshot 1`] = `
+<div
+  className="form-input-material"
+>
+  <label>
+    : 
+  </label>
+  <input
+    className="form-control-material"
+  />
+</div>
+`;

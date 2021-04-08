@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component tests expect to match HeaderComponent snapshot 1`] = `
+<div
+  className="link-div"
+>
+  <Link
+    className="top-link-style"
+    to="/"
+  >
+    <span
+      className="link-text"
+    >
+      Form
+    </span>
+  </Link>
+  <Link
+    className="top-link-style"
+    to="/info"
+  >
+    <span
+      className="link-text"
+    >
+      Report (last 10 dates)
+    </span>
+  </Link>
+</div>
+`;

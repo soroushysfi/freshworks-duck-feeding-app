@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to match DuckFeedingForm snapshot 1`] = `
+<form
+  className="login-form box-format"
+  onSubmit={[Function]}
+>
+  <h1>
+    Submit your duck feeding information!
+  </h1>
+  <div
+    className="display-row"
+  >
+    <CustomInputComponent
+      label="Feeding Time"
+      name="feedingTime"
+      onChange={[Function]}
+      placeholder="When did you feed the ducks"
+      required={true}
+      type="date"
+      value=""
+    />
+    <CustomInputComponent
+      label="Food Type"
+      name="foodType"
+      onChange={[Function]}
+      placeholder="Like vegetable"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="display-row"
+  >
+    <CustomInputComponent
+      label="Food Kind"
+      name="foodKind"
+      onChange={[Function]}
+      placeholder="Like broccoli"
+      required={true}
+      type="text"
+      value=""
+    />
+    <CustomInputComponent
+      label="Duck Count"
+      name="duckCount"
+      onChange={[Function]}
+      placeholder="How many ducks?"
+      required={true}
+      type="number"
+      value=""
+    />
+  </div>
+  <div
+    className="display-row"
+  >
+    <CustomInputComponent
+      label="Food Amount"
+      name="foodAmount"
+      onChange={[Function]}
+      placeholder="How many grams?"
+      required={true}
+      type="number"
+      value=""
+    />
+  </div>
+  <div
+    className="display-row"
+  >
+    <CustomInputComponent
+      label="Re-occurring Feeding"
+      name="reOccurring"
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <button
+    className="btn"
+    disabled={false}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

@@ -3,7 +3,7 @@ import React from 'react'
 
 import DuckFeedingFormComponent from '../../components/duck-feeding-form/duck-feeding-form.component'
 
-const DuckFeedingPageComponent = () => {
+const DuckFeedingFormPageComponent = () => {
     return (
         <div>
             <DuckFeedingFormComponent />
@@ -11,4 +11,4 @@ const DuckFeedingPageComponent = () => {
     )
 }
 
-export default DuckFeedingPageComponent
+export default DuckFeedingFormPageComponent

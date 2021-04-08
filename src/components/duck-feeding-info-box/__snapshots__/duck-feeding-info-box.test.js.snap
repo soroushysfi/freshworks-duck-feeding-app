@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to match DuckFeedingInfoBoxComponent snapshot 1`] = `
+<div
+  className="fetched-info-box"
+>
+  <span>
+    Duck Feeding Time:
+  </span>
+  <p>
+    NaN
+    /
+    NaN
+    /
+    NaN
+  </p>
+  <span>
+    Duck Count:
+  </span>
+  <p />
+  <span>
+    Food Type:
+  </span>
+  <p />
+</div>
+`;

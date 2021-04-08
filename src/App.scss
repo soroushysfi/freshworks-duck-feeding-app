@@ -1,8 +1,4 @@
-$box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
-0 1px 1px rgba(128, 128, 128, 0.155),
-0 2.1px 2.1px rgba(128, 128, 128, 0.195),
-0 4.4px 4.4px rgba(128, 128, 128, 0.241),
-0 12px 12px rgba(128, 128, 128, 0.35);
+@import './styles-variables.scss';
 
 body {
   display: flex;
@@ -11,36 +7,7 @@ body {
   min-height: 100vh;
   background: #eceffc;
 }
-.link-div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  .top-link-style{
-    background-color: #e48900;
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 40%;
-    margin: 20px auto;
-    text-align: center;
-    color: white;
-    border-radius: 5px;
-    font-size: large;
-    text-decoration: none;
-    transition: ease-in-out 150ms;
-
-    .link-text {
-      display: block;
-      margin: auto;
-    }
-
-    &:hover {
-      box-shadow: $box-shadow;
-    }
-  }
-}
 
 .box-format {
   display: flex;
