@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux';
 
-
-const rootReducer  = combineReducers({})
+import DuckFeedingInfoReducer from './duck-feeding-info/duck-feeding-info.reducer'
+const rootReducer  = combineReducers({
+    duckFeeding: DuckFeedingInfoReducer
+})
 
 export default rootReducer;

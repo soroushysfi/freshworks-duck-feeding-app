@@ -10,7 +10,7 @@ function App() {
     <div >
       <div className='link-div'>
       <Link className='top-link-style' to='/'><span className='link-text'>Form</span></Link>
-      <Link className='top-link-style' to='/info'><span className='link-text'>See Submitted Data</span></Link>
+      <Link className='top-link-style' to='/info'><span className='link-text'>See Last 10 Submitted Data</span></Link>
       </div>
       <Switch>
       <Route exact path='/' component={DuckFeedingSubmitComponent}/>
