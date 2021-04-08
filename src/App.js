@@ -12,7 +12,7 @@ function App() {
       <HeaderComponent />
       <Switch>
       <Route exact path='/' component={DuckFeedingFormPageComponent}/>
-      <Route exact path='/info' component={DuckFeedingReportPageComponent}/>
+      <Route exact path='/report' component={DuckFeedingReportPageComponent}/>
      </Switch>
     </div>
   );

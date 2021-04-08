@@ -16,7 +16,7 @@ exports[`Header Component tests expect to match HeaderComponent snapshot 1`] = `
   </Link>
   <Link
     className="top-link-style"
-    to="/info"
+    to="/report"
   >
     <span
       className="link-text"

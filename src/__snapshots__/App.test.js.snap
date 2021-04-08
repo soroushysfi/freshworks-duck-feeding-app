@@ -19,7 +19,7 @@ exports[`App component snapshot test 1`] = `
         }
       }
       exact={true}
-      path="/info"
+      path="/report"
     />
   </Switch>
 </div>
