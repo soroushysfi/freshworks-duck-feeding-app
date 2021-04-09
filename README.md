@@ -32,13 +32,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Deployed Version
+## Deployed Version
 
 This app has been deployed on Heroku free servers.
 
 You can find the live app [here](https://freshworks-duck-feeding-app.herokuapp.com/).
 
-### Backend for this Project
+## Backend for this Project
 
 APIs used for this project are provided by another [repository](https://github.com/soroushysfi/freshworks-duck-feeding-api).
 
