@@ -30,3 +30,9 @@
       }
     }
   }
+
+  @media (max-width: 800px) {
+    .smaller-font-size-links {
+      font-size: 14px !important;
+    }
+  }

@@ -57,7 +57,7 @@ class DuckFeedingForm extends React.Component {
   render () {
     return (  
       <form className="login-form box-format" onSubmit={this.handleSubmit}>
-      <h1>Submit your duck feeding information!</h1>
+      <h1 className='smaller-font-size-header text-align-center'>Submit your duck feeding information!</h1>
       <div className='display-row'>
       <CustomInputComponent label='Feeding Time' value={this.state.formData.feedingTime} name='feedingTime' onChange={this.handleChange} type='date' placeholder="When did you feed the ducks" required={true}/> 
       <CustomInputComponent label='Food Type' value={this.state.formData.foodType} name='foodType' onChange={this.handleChange} type='text' placeholder="Like vegetable" required={true}/> 
