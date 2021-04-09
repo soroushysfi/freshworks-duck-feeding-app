@@ -6,6 +6,8 @@ import API_CRED from '../../config/api-config'
 
 import './duck-feeding-report-page.styles.scss'
 class DuckFeedingReportPage extends React.Component  {
+
+    // calling backend api to fetch data on component load
     async getDuckFeedingInformation () {
         const result = await axios.get(`${API_CRED.address}?limit=10`)
         this.props.updateDuckFeedingInfo(result.data)

@@ -1,3 +1,5 @@
+//main duck feeding report page
+
 import React from 'react'
 import { connect } from 'react-redux'
 
@@ -13,10 +15,16 @@ class DuckFeedingReportPageComponent extends React.Component  {
     }
 }
 
+// dispatching actions to manipulate state
 const mapDispatchToProps = dispatch => ({
     updateDuckFeedingInfo: (data) => dispatch(updateDuckFeedingInfo(data))
 })
+// mapping existing state properties to props
+// of this component
 const mapStateToProps = (state) => ({ 
     duckFeedingInfo: state.duckFeeding.duckFeedingInfo
 });
+
+// using connect to create a higher order component to use 
+// with Redux
 export default connect(mapStateToProps, mapDispatchToProps)(DuckFeedingReportPageComponent)

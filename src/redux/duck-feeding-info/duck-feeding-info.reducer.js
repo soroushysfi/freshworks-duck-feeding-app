@@ -1,3 +1,6 @@
+// switch case here is separate functions based on
+// the types of actions triggered
+
 import DuckFeedingInfoActionTypes from './duck-feeding-info.types'
 const INITIAL_STATUS = {
     duckFeedingInfo: [],

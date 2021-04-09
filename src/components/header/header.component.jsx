@@ -1,3 +1,6 @@
+// header of the application providing links to navigate
+// between different pages
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 

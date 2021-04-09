@@ -9,6 +9,8 @@ import './duck-feeding-form.styles.scss'
 class DuckFeedingForm extends React.Component {
   constructor (props) {
     super(props);
+    // form data exist in formData property in the local state of the 
+    // component
     this.state = { 
       formData : {
       feedingTime: '',
@@ -24,6 +26,7 @@ class DuckFeedingForm extends React.Component {
     
     };
   }
+  // on input change this function gets triggered to update the state
   handleChange = (event) => {
     const { formData } = { ...this.state }
     if (event.target.name !== 'reOccurring') {
@@ -35,6 +38,7 @@ class DuckFeedingForm extends React.Component {
     this.setState({formData}) 
 
   };
+  // on form submit this function will send data to the backend
   handleSubmit = async (event) => {
     event.preventDefault();
     this.setState({loadingButton: true})

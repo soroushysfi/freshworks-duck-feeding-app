@@ -6,6 +6,9 @@ import { Switch, Route } from 'react-router-dom'
 import HeaderComponent from './components/header/header.component'
 import DuckFeedingReportPageComponent from './pages/duck-feeding-report-page/duck-feeding-report-page.component'
 import DuckFeedingFormPageComponent from './pages/duck-feeding-form-page/duck-feeding-form-page.component'
+
+// parent component
+// provides route to '/' and '/report' page
 function App() {
   return (
     <div >
